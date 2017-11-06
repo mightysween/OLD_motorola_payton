@@ -9,7 +9,7 @@
 /boot           emmc      	/dev/block/bootdevice/by-name/boot                 
 /factory        ext4      	/dev/block/bootdevice/by-name/factory              	
 /persist        ext4      	/dev/block/bootdevice/by-name/persist              	
-/sdcard         vfat      	/dev/block/mmcblk1p1    
+/sdcard         vfat      	/dev/block/mmcblk1p1    					flags=storage
 /oem		ext4		/dev/block/bootdevice/by-name/oem
 /modem		ext4		/dev/block/bootdevice/by-name/modem
 /customize	ext4		/dev/block/bootdevice/by-name/customize
