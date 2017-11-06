@@ -1,0 +1,6 @@
+ro.build.model=motorola_payton
+ro.build.device=payton
+# for stock ROM
+ro.product.device=motorola_payton
+ro.product.model=motorola_payton
+ro.product.name=payton
