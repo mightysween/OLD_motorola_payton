@@ -49,13 +49,13 @@ TW_THEME := portrait_hdpi
 TARGET_SCREEN_WIDTH := 800
 TARGET_SCREEN_HEIGTH := 1280
 #RECOVERY_SDCARD_ON_DATA := true
-#TARGET_RECOVERY_QCOM_RTC_FIX := true
+TARGET_RECOVERY_QCOM_RTC_FIX := true
 #TW_EXCLUDE_SUPERSU := true
 #TW_SCREEN_BLANK_ON_BOOT := true
 #TW_BRIGHTNESS_PATH := "/sys/devices/soc/1a00000.qcom\x2mdss_mdp/1a00000.qcom\x2mdss_mdp:qcom\x2mdss_fb_primary/leds/lcd-backlight/brightness"
 #TW_MAX_BRIGHTNESS := 255
 #TARGET_UNIFIED_DEVICE := true
-#TARGET_SYSTEM_PROP := device/motorola/payton/system.prop
+TARGET_SYSTEM_PROP := device/motorola/payton/system.prop
 
 # exFAT FS Support
 TW_INCLUDE_FUSE_EXFAT := true
