@@ -13,23 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+ifneq ($(filter payton,$(TARGET_DEVICE)),)
+
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),payton)
-include $(call all-makefiles-under, $(LOCAL_PATH))
+include $(call all-makefiles-under,$(LOCAL_PATH))
 
-include $(CLEAR_VARS)
-
-BOARD_RECOVERY_IMAGE_PREPARE := \
-  $(SED_INPLACE) 's/ro.build.id=.*/ro.build.id=NPW26.83-34-0-1' $(TARGET_RECOVERY_ROOT_OUT)/default.prop
-
-TEXFAT_MODULE := $(TARGET_RECOVERY_ROOT_OUT)/sbin/texfat.ko
-$(TEXFAT_MODULE): $(ANDROID_PRODUCT_OUT)/kernel
-	@cp $(KERNEL_MODULES_OUT)/texfat.ko $(TEXFAT_MODULE)
-	$(ANDROID_PRODUCT_OUT)/obj/KERNEL_OBJ/scripts/sign-file sha512 \
-		$(ANDROID_PRODUCT_OUT)/obj/KERNEL_OBJ/certs/signing_key.pem \
-		$(ANDROID_PRODUCT_OUT)/obj/KERNEL_OBJ/certs/signing_key.x509 \
-		$(TEXFAT_MODULE)
-
-ALL_DEFAULT_INSTALLED_MODULES += $(TEXFAT_MODULE)
 endif
