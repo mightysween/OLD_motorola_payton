@@ -1,6 +1,6 @@
-ro.build.model=motorola_payton
+ro.build.model=moto x4
 ro.build.device=payton
 # for stock ROM
-ro.product.device=motorola_payton
-ro.product.model=motorola_payton
-ro.product.name=payton
+ro.product.device=payton_sprout
+ro.product.model=moto x4
+ro.product.name=payton_fi
