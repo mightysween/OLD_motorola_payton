@@ -1,6 +1,6 @@
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := device/vendor/payton/kernel
+	LOCAL_KERNEL := device/vendor/payton/prebuilt
 else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif

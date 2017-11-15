@@ -1,5 +1,5 @@
 ro.build.model=moto x4
-ro.build.device=payton
+ro.build.device=payton_sprout
 # for stock ROM
 ro.product.device=payton_sprout
 ro.product.model=moto x4
