@@ -22,12 +22,12 @@
 #
 
 
-LOCAL_PATH:= device/motorola/payton
+LOCAL_PATH:= /home/mightysween/omni/device/motorola/payton
 
 $(Shell mkdir -p $ (OUT)/obj/KERNEL_OBJ/usr)
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL:=$(LOCAL_PATH)/kernel
+LOCAL_KERNEL:= kernel/motorola/payton
 else
 LOCAL_KERNEL:= $(TARGET_PREBUILT_KERNEL)
 endif
@@ -39,5 +39,5 @@ $(LOCAL_PATH)/recovery/recovery.fstab:root/recovery.fstab
 
 $(call inherit-product,build/target/product/full.mk)
 
-PRODUCT_NAME := payton_fi
+PRODUCT_NAME := payton
 

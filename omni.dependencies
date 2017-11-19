@@ -1,12 +1,6 @@
 [
   {
     "remote": "github",
-    "repository": "MotorolaMobilityLLC/kernel-msm",
-    "revision": "7.1.1-nougat-release-payton",
-    "target_path": "kernel/motorola/payton"
-  },
-  {
-    "remote": "github",
     "repository": "AOSPA/android_device_qcom_common",
     "revision": "nougat-mr2",
     "target_path": "device/qcom/common"

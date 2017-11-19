@@ -8,8 +8,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)  # If you are bu
 $(call inherit-product, device/motorola/payton/device.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_NAME := payton_fi
-PRODUCT_DEVICE := payton_sprout
+PRODUCT_NAME := omni_payton
+PRODUCT_DEVICE := payton
 PRODUCT_BRAND := motorola
 PRODUCT_MODEL := moto x4
 PRODUCT_MANUFACTURER := motorola
