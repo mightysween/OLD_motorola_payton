@@ -1,6 +1,6 @@
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := /home/mightysween/omni/kernel/motorola/payton
+	LOCAL_KERNEL := /home/mightysween/omni/device/motorola/payton/prebuilt
 else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif

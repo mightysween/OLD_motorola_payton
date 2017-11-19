@@ -22,18 +22,18 @@
 #
 
 
-LOCAL_PATH:= /home/mightysween/omni/device/motorola/payton
+LOCAL_PATH := /home/mightysween/omni/device/motorola/payton
 
 $(Shell mkdir -p $ (OUT)/obj/KERNEL_OBJ/usr)
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL:= kernel/motorola/payton
+LOCAL_KERNEL := /home/mightysween/omni/kernel/motorola/payton
 else
-LOCAL_KERNEL:= $(TARGET_PREBUILT_KERNEL)
+LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
 PRODUCT_COPY_FILES := \
-$(LOCAL_PATH)/prebuilt:kernel \
+$(LOCAL_PATH)/prebuilt:kernel\
 #$(LOCAL_PATH)/dt.img:dt.img\
 $(LOCAL_PATH)/recovery/recovery.fstab:root/recovery.fstab
 
