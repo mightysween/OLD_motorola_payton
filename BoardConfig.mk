@@ -21,7 +21,9 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 
 # Crypto
-TARGET_HW_DISK_ENCRYPTION := true
+#TARGET_HW_DISK_ENCRYPTION := true
+TW_INCLUDE_CRYTPO := true
+TW_CRYPTO_USE_SYSTEM_VOLD := true
 
 # Kernel
 TARGET_PREBUILT_KERNEL := device/motorola/payton/prebuilt
@@ -47,7 +49,6 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 # TWRP
 RECOVERY_VARIANT := twrp
 TW_THEME := portrait_hdpi
-TW_INCLUDE_CRYTPO := true
 #RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TW_EXCLUDE_SUPERSU := true
@@ -59,3 +60,6 @@ TARGET_RECOVERY_FSTAB := device/motorola/payton/twrp.fstab
 AB_OTA_UPDATER := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
+
+#TESTING
+

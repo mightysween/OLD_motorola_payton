@@ -1,9 +1,9 @@
 
 # FSTAB FILE FOR TWRP
 
-/boot            emmc              /dev/block/bootdevice/by-name/boot       flags=slotselect
-/system          ext4              /dev/block/bootdevice/by-name/system     flags=slotselect
-/data	         ext4              /dev/block/bootdevice/by-name/userdata	
-/misc	         emmc              /dev/block/bootdevice/by-name/misc
+/boot            emmc              /dev/block/mmcblk0p44			        flags=slotselect
+/system          ext4              /dev/block/mmcblk0p65     				flags=slotselect
+/data	         ext4              /dev/block/mmcblk0p67				    flags=encryptable=footer;length=-16384
+/misc	         emmc              /dev/block/mmcblk0p48
 /sdcard          vfat	      	   /dev/block/mmcblk1p1               		flags=display="Internal Storage";storage;wipeingui
 

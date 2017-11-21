@@ -3,7 +3,14 @@
 
 /boot            emmc              /dev/block/bootdevice/by-name/boot       flags=slotselect
 /system          ext4              /dev/block/bootdevice/by-name/system     flags=slotselect
-/data	         ext4              /dev/block/bootdevice/by-name/userdata	
+/data	         ext4              /dev/block/bootdevice/by-name/userdata	flags=encryptable=footer
 /misc	         emmc              /dev/block/bootdevice/by-name/misc
 /sdcard          vfat	      	   /dev/block/mmcblk1p1               		flags=display="Internal Storage";storage;wipeingui
+
+
+# Mounts with actual partition names -- WILL NOT WORK ON SLOT CHANGE
+#/boot            emmc              /dev/block/mmcblk0p44			        flags=slotselect
+#/system          ext4              /dev/block/mmcblk0p65     				flags=slotselect
+#/data	         ext4              /dev/block/mmcblk0p67	
+#/misc	         emmc              /dev/block/mmcblk0p48
 
