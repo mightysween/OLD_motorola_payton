@@ -23,7 +23,7 @@ TARGET_2ND_CPU_VARIANT := generic
 # Crypto
 TW_INCLUDE_CRYTPO := true
 TW_CRYPTO_USE_SYSTEM_VOLD := qseecomd
-TW_CRYPTO_SYSTEM_VOLD_DEBUG := true
+#TW_CRYPTO_SYSTEM_VOLD_DEBUG := true
 
 # Kernel
 TARGET_PREBUILT_KERNEL := device/motorola/payton/prebuilt
