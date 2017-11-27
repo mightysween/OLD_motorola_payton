@@ -4,8 +4,8 @@
 /boot            emmc       /dev/block/bootdevice/by-name/boot      	flags=slotselect
 /system          ext4       /dev/block/bootdevice/by-name/system    	flags=slotselect
 /firmware		 ext4		/dev/block/bootdevice/by-name/modem			flags=ignoreblkid
-/data	         ext4       /dev/block/bootdevice/by-name/userdata		flags=encryptable=footer;fsflags=formattable
 /persist         ext4      	/dev/block/bootdevice/by-name/persist  
+/data	         ext4       /dev/block/bootdevice/by-name/userdata		flags=encryptable=footer;fsflags=formattable
 /misc	         emmc       /dev/block/bootdevice/by-name/misc
 /sdcard          vfat	    /dev/block/mmcblk1p1               			flags=display="Internal Storage";storage;wipeingui
 /factory         ext4      	/dev/block/bootdevice/by-name/factory              	
