@@ -25,27 +25,25 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+#TESTING SECTION
 
-# This section credit to mahe4fooz @ github
+on early-init
+    mkdir /firmware 0771 system system
+
 on fs
-    chmod 0777 /dev/qseecom
-    chmod 0664 /dev/ion
-    chown system system /dev/ion
+    wait /dev/block/bootdevice/by-name/modem
+    mount vfat /dev/block/bootdevice/by-name/modem /firmware ro shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware_file:s0
 
-on property:ro.crypto.state=encrypted
-    start sbinqseecomd
+    wait /dev/block/bootdevice/by-name/system
+    mount ext4 /dev/block/bootdevice/by-name/system /system ro
 
-# Separate copy needed to use /sbin/linker64 instead of /system/bin/linker64
-# This section credit to mahe4fooz @ github
-service sbinqseecomd /sbin/qseecomd
-    oneshot
-    disabled
-    user root
-    group root
-    seclabel u:r:recovery:s0
+on firmware_mounts_complete
+   symlink /system/vendor /vendor
+
+service qseecomd /system/bin/qseecomd
 
 
-
+#ORIGINAL FILE
 on init
     mkdir /dev/usb-ffs 0770 shell shell
     mkdir /dev/usb-ffs/adb 0770 shell shell
