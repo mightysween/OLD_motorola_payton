@@ -37,7 +37,7 @@ $(LOCAL_PATH)/prebuilt:kernel\
 #$(LOCAL_PATH)/dt.img:dt.img\
 $(LOCAL_PATH)/recovery/recovery.fstab:root/recovery.fstab
 
-$(call inherit-product,build/target/product/full.mk)
+#$(call inherit-product,build/target/product/full.mk)
 
 PRODUCT_NAME := payton
 

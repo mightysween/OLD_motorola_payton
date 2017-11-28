@@ -1,24 +1,29 @@
 
 # FSTAB FILE FOR TWRP
-
 /boot            emmc       /dev/block/bootdevice/by-name/boot      	flags=slotselect
 /system          ext4       /dev/block/bootdevice/by-name/system    	flags=slotselect
-/firmware		 ext4		/dev/block/bootdevice/by-name/modem			flags=ignoreblkid
 /persist         ext4      	/dev/block/bootdevice/by-name/persist  
-/data	         ext4       /dev/block/bootdevice/by-name/userdata		flags=encryptable=footer;fsflags=formattable
+/data	         ext4       /dev/block/bootdevice/by-name/userdata		flags=encryptable=footer
+/sdcard          vfat	    /dev/block/mmcblk1p1               			flags=display="Micro SD";storage;wipeingui
 /misc	         emmc       /dev/block/bootdevice/by-name/misc
-/sdcard          vfat	    /dev/block/mmcblk1p1               			flags=display="Internal Storage";storage;wipeingui
-/factory         ext4      	/dev/block/bootdevice/by-name/factory              	
-/oem			 ext4		/dev/block/bootdevice/by-name/oem
-/customize		 ext4		/dev/block/bootdevice/by-name/customize
-/bt_firmware	 ext4		/dev/block/bootdevice/by-name/bluetooth
-/dsp			 ext4		/dev/block/bootdevice/by-name/dsp
+
+#TESTING - NOT A/B COMPLIANT
+/modem			 ext4		/dev/block/mmcblk0p25						            	
+/oem			 ext4		/dev/block/mmcblk0p63
+/bt_firmware	 ext4		/dev/block/mmcblk0p54
+/dsp			 ext4		/dev/block/mmcblk0p29
 
 
+#ORIGINAL ENTRIES
+#/modem			 ext4		/dev/block/bootdevice/by-name/modem			flags=ignoreblkid
+#/factory         ext4      	/dev/block/bootdevice/by-name/factory              	
+#/oem			 ext4		/dev/block/bootdevice/by-name/oem
+#/customize		 ext4		/dev/block/bootdevice/by-name/customize
+#/bt_firmware	 ext4		/dev/block/bootdevice/by-name/bluetooth
+#/dsp			 ext4		/dev/block/bootdevice/by-name/dsp
 
 
 #STOCK FSTAB - FOR REFERENCE
-
 #/dev/block/bootdevice/by-name/system       /         ext4    ro,barrier=1                                                    wait,slotselect
 #/dev/block/bootdevice/by-name/userdata     /data           ext4    noatime,nosuid,nodev,discard,data=ordered,noauto_da_alloc     wait,check,formattable,fileencryption=ice
 #/dev/block/mmcblk1p1                              /sdcard           vfat    nosuid,nodev,barrier=1,data=ordered,nodelalloc                  wait
