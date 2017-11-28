@@ -3,7 +3,6 @@
 /boot            emmc       /dev/block/bootdevice/by-name/boot      	flags=slotselect
 /system          ext4       /dev/block/bootdevice/by-name/system    	flags=slotselect
 /persist         ext4      	/dev/block/bootdevice/by-name/persist  
-/data	         ext4       /dev/block/bootdevice/by-name/userdata		flags=encryptable=footer
 /sdcard          vfat	    /dev/block/mmcblk1p1               			flags=display="Micro SD";storage;wipeingui
 /misc	         emmc       /dev/block/bootdevice/by-name/misc
 
@@ -12,6 +11,11 @@
 /oem			 ext4		/dev/block/mmcblk0p63
 /bt_firmware	 ext4		/dev/block/mmcblk0p54
 /dsp			 ext4		/dev/block/mmcblk0p29
+
+#TRY MOUNTING USERDATA LAST
+/data	         ext4       /dev/block/bootdevice/by-name/userdata		flags=encryptable=footer;length=-16834
+
+
 
 
 #ORIGINAL ENTRIES
