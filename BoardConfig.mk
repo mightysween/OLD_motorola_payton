@@ -20,6 +20,10 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 
+#USB TESTING
+#TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.0/file
+TW_EXCLUDE_DEFAULT_USB_INIT := true
+
 # Crypto
 TW_INCLUDE_CRYTPO := true
 TW_CRYPTO_USE_SYSTEM_VOLD := qseecomd
@@ -43,9 +47,6 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_SUPRESS_EMMC_WIPE := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 
-#USB TESTING
-TARGET_USE_CUSTOM_LUN_FILE_PATH := "/config/usb_gadget/g1/functions/mass_storage.0/lun.0/file"
-TW_EXCLUDE_DEFAULT_USB_INIT := true
 
 # TWRP
 #BOARD_USES_RECOVERY_AS_BOOT = true
