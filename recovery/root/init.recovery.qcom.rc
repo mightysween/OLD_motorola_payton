@@ -25,21 +25,20 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+import init.recovery.qcom_decrypt.rc
+
+on init
+    insmod /sbin/texfat.ko
+
+    start copy_fingerprint
+    start qcom-usb-sh
 
 on fs
-    # Needed to make qseecomd work in recovery
-    chmod 0777 /dev/qseecom
-    chmod 0664 /dev/ion
-    chown system system /dev/ion
+    wait /dev/block/bootdevice/by-name/factory
+    mkdir /factory 0755
+    mount ext4 /dev/block/bootdevice/by-name/factory /factory ro nodev nosuid
 
-property:ro.crypto.state=encrypted
-    start sbinqseecomd
-
-# Separate copy needed to use /sbin/linker64 instead of /system/bin/linker64
-service sbinqseecomd /sbin/qseecomd
+service copy_fingerprint /sbin/copy_fingerprint.sh
     oneshot
     disabled
-    user root
-    group root
 seclabel u:r:recovery:s0
-
