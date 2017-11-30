@@ -111,7 +111,7 @@ fi
 #
 baseband=`getprop ro.baseband`
 
-echo 1  > /sys/class/android_usb/f_mass_storage/lun/nofua
+echo 1  > /config/usb_gadget/g1/functions/mass_storage.0/lun.0/nofua
 #usb_config=`getprop persist.sys.usb.config`
 #case "$usb_config" in
     #"" | "adb") #USB persist config not set, select default configuration
@@ -314,8 +314,8 @@ case "$target" in
 		case $platformver in
 			"QRD")
 				echo "mounting usbcdrom lun"
-				echo $cdromname > /sys/class/android_usb/android0/f_mass_storage/rom/file
-				chmod 0444 /sys/class/android_usb/android0/f_mass_storage/rom/file
+				echo $cdromname > /config/usb_gadget/g1/functions/mass_storage.0/lun.0/cdrom
+				chmod 0444 /config/usb_gadget/g1/functions/mass_storage.0/lun.0/cdrom
 				;;
 		esac
 		;;
